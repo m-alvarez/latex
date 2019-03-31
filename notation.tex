@@ -30,7 +30,26 @@
 
 % Logistics
 
-\newcommand{\todo}[1]{\red{[TODO: #1]}}
+\newif\ifdraft
+\newcommand{\red}[1]{{\color{red} {#1}}}
+\newcommand{\green}[1]{{\color{green} {#1}}}
+\newcommand{\blue}[1]{{\color{blue} {#1}}}
+\newcommand{\todo}[1]{
+  \ifdraft
+    \red{[TODO: #1]}
+  \fi
+}
+
+% Theorems
+\ifcsmacro{theorem}{}{
+\ifcsmacro{thm}{}{
+  \newtheorem{thm}{Theorem}
+  \newtheorem{def}{Definition}
+  \newtheorem{lem}{Lemma}
+  \newtheorem{rem}{Remark}
+  \newtheorem{prop}{Proposition}
+}}
+
 
 \newcommand{\ds}[1]{\widehat {#1}}
 
