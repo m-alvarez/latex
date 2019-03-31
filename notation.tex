@@ -1,0 +1,67 @@
+% Miscellanea
+\renewcommand{\epsilon}[0]{\varepsilon}
+
+% Sets
+\newcommand{\NN}[0]{\mathbb{N}}
+\newcommand{\RR}[0]{\mathbb{R}}
+\newcommand{\ZZ}[0]{\mathbb{Z}}
+\newcommand{\BB}[0]{\mathbb{B}}
+\newcommand{\KK}[0]{\mathbb{K}}
+
+% Parentheses
+
+\newcommand{\brak}[1]{\left[ #1 \right]}
+\newcommand{\Brak}[1]{\Big[ #1 \Big]}
+\newcommand{\anglebrak}[1]{\langle #1 \rangle}
+
+% Arrows
+\newcommand{\ra}[0]{\rightarrow}
+\newcommand{\hra}[0]{\hookrightarrow}
+\newcommand{\la}[0]{\leftarrow}
+\newcommand{\nlra}[0]{\nleftrightarrow}
+
+\newcommand{\Ra}[0]{\Rightarrow}
+\renewcommand{\implies}[0]{\Ra}
+\newcommand{\La}[0]{\Leftarrow}
+
+% Relations
+\newcommand{\defeq}[0]{\triangleq}
+\newcommand{\slt}[0]{\sqsubseteq}
+
+% Logistics
+
+\newcommand{\todo}[1]{\red{[TODO: #1]}}
+
+\newcommand{\ds}[1]{\widehat {#1}}
+
+% Categories
+\newcommand{\cat}[1]{\mathbf{#1}}
+\newcommand{\ftor}[1]{\mathrm{#1}}
+
+\newcommand{\theo}[1]{\mathfrak{T}_{#1}}
+\newcommand{\homset}[3]{{#1}\left[{#2}, {#3}\right]}
+
+\newcommand{\arr}[1]{\mathbf{1}}
+\newcommand{\Id}[0]{\arr{id}}
+\newcommand{\Ev}[0]{\arr{ev}}
+
+%% Cartesian
+\newcommand{\pair}[2]{\langle {#1}, {#2} \rangle}
+\newcommand{\tuple}[1]{\left\langle {#1} \right\rangle}
+
+%% Kleisli
+\makeatletter
+\newsavebox{\@brx}
+\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}%
+  \mathopen{\copy\@brx\kern-0.5\wd\@brx\usebox{\@brx}}}
+\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}%
+  \mathclose{\copy\@brx\kern-0.5\wd\@brx\usebox{\@brx}}}
+\makeatother
+\newcommand{\kpair}[2]{\llangle {#1}, {#2} \rrangle}
+
+% Change actions
+\newcommand{\changes}[0]{\Delta}
+\newcommand{\change}[0]{\delta}
+\renewcommand{\d}[0]{\partial}
+\newcommand{\der}[2]{\frac{\d\,{#1}}{\d{#2}}}
+\newcommand{\grad}[0]{\nabla}
