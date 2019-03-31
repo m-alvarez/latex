@@ -24,6 +24,8 @@
 \renewcommand{\implies}[0]{\Ra}
 \newcommand{\La}[0]{\Leftarrow}
 
+\newcommand{\halfRa}[0]{\rightbarharpoon}
+
 % Relations
 \newcommand{\defeq}[0]{\triangleq}
 \newcommand{\slt}[0]{\sqsubseteq}
@@ -42,13 +44,12 @@
 
 % Theorems
 \ifcsmacro{theorem}{}{
-\ifcsmacro{thm}{}{
   \newtheorem{thm}{Theorem}
-  \newtheorem{def}{Definition}
-  \newtheorem{lem}{Lemma}
+  \newtheorem{defn}{Definition}
+  \newtheorem{lemma}{Lemma}
   \newtheorem{rem}{Remark}
   \newtheorem{prop}{Proposition}
-}}
+}
 
 
 \newcommand{\ds}[1]{\widehat {#1}}
