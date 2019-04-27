@@ -1,0 +1,80 @@
+\newcommand{\repeatthm}[1]{%
+  \begingroup
+  \renewcommand{\thethm}{\ref{thm:#1}}%
+  \expandafter\expandafter\expandafter\thm
+  \csname repthm@#1\endcsname
+  \endthm
+  \endgroup
+}
+
+\NewEnviron{proof-for-thm}[1]{
+  \repeatthm{#1}
+  \begin{proof}
+    \label{prf:#1}
+    \BODY
+  \end{proof}
+}
+
+\NewEnviron{rep-thm}[1]{%
+  \global\expandafter\xdef\csname repthm@#1\endcsname{%
+    \unexpanded\expandafter{\BODY}%
+  }%
+  \expandafter\thm\BODY\unskip\label{thm:#1}\endthm
+  \gdef\lastthm{#1}
+}
+
+\newcommand{\repeatlemma}[1]{%
+  \begingroup
+  \renewcommand{\thelemma}{\ref{lem:#1}}%
+  \expandafter\expandafter\expandafter\lemma
+  \csname replemma@#1\endcsname
+  \endlemma
+  \endgroup
+}
+
+\NewEnviron{proof-for-lemma}[1]{
+  \repeatlemma{#1}
+  \begin{proof}
+    \label{prf:#1}
+    \BODY
+  \end{proof}
+}
+
+\NewEnviron{rep-lemma}[1]{%
+  \global\expandafter\xdef\csname replemma@#1\endcsname{%
+    \unexpanded\expandafter{\BODY}%
+  }%
+  \expandafter\lemma\BODY\unskip\label{lem:#1}\endlemma
+  \gdef\lastthm{#1}
+}
+
+\newcommand{\repeatprop}[1]{%
+  \begingroup
+  \renewcommand{\theproposition}{\ref{prop:#1}}%
+  \expandafter\expandafter\expandafter\proposition
+  \csname repproposition@#1\endcsname
+  \endproposition
+  \endgroup
+}
+
+\NewEnviron{proof-for-prop}[1]{
+  \repeatprop{#1}
+  \begin{proof}
+    \label{prf:#1}
+    \BODY
+  \end{proof}
+}
+
+\NewEnviron{rep-proposition}[1]{%
+  \global\expandafter\xdef\csname repproposition@#1\endcsname{%
+    \unexpanded\expandafter{\BODY}%
+  }%
+  \expandafter\proposition\BODY\unskip\label{prop:#1}\endproposition
+  \gdef\lastthm{#1}
+}
+
+\newcommand{\proofref}[0]{
+  \begin{proof}
+    See \ref{prf:\lastthm}
+  \end{proof}
+}
