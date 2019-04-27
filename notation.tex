@@ -37,9 +37,9 @@
 % Logistics
 
 \newif\ifdraft
-\newcommand{\red}[1]{{\color{red} {#1}}}
-\newcommand{\green}[1]{{\color{green} {#1}}}
-\newcommand{\blue}[1]{{\color{blue} {#1}}}
+\renewcommand{\red}[1]{{\color{red} {#1}}}
+\renewcommand{\green}[1]{{\color{green} {#1}}}
+\renewcommand{\blue}[1]{{\color{blue} {#1}}}
 \newcommand{\todo}[1]{
   \ifdraft
     \red{[TODO: #1]}
@@ -91,3 +91,4 @@
 \newcommand{\der}[2]{\frac{\d\,{#1}}{\d{#2}}}
 \newcommand{\grad}[0]{\nabla}
 \newcommand{\cact}[1]{\overline{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
