@@ -1,3 +1,12 @@
+\definecollection{repeated-theorems}
+\makeatletter
+\newenvironment{when-theorems}[0]
+{
+  \@nameuse{collect}{repeated-theorems}{}{}{}{}%
+}
+{\@nameuse{endcollect}}
+\makeatother
+
 \newcommand{\repeatthm}[1]{%
   \begingroup
   \renewcommand{\thetheorem}{\ref{thm:#1}}%
@@ -7,13 +16,16 @@
   \endgroup
 }
 
-\NewEnviron{proof-for-theorem}[1]{
-  \repeatthm{#1}
-  \begin{proof}
-    \label{prf:#1}
-    \BODY
-  \end{proof}
+\makeatletter
+\newenvironment{proof-for-theorem}[1]
+{
+  \@nameuse{collect}{repeated-theorems}{\repeatthm{#1}\begin{proof}\label{prf:#1}}{\end{proof}}
+  {}{}%
 }
+{
+  \@nameuse{endcollect}
+}
+\makeatother
 
 \NewEnviron{rep-theorem}[1]{%
   \global\expandafter\xdef\csname reptheorem@#1\endcsname{%
@@ -32,12 +44,14 @@
   \endgroup
 }
 
-\NewEnviron{proof-for-lemma}[1]{
-  \repeatlemma{#1}
-  \begin{proof}
-    \label{prf:#1}
-    \BODY
-  \end{proof}
+\makeatletter
+\newenvironment{proof-for-lemma}[1]
+{
+  \@nameuse{collect}{repeated-theorems}{\repeatlemma{#1}\begin{proof}\label{prf:#1}}{\end{proof}}
+  {}{}%
+}
+{
+  \@nameuse{endcollect}
 }
 
 \NewEnviron{rep-lemma}[1]{%
@@ -57,12 +71,14 @@
   \endgroup
 }
 
-\NewEnviron{proof-for-prop}[1]{
-  \repeatprop{#1}
-  \begin{proof}
-    \label{prf:#1}
-    \BODY
-  \end{proof}
+\makeatletter
+\newenvironment{proof-for-prop}[1]
+{
+  \@nameuse{collect}{repeated-theorems}{\repeatprop{#1}\begin{proof}\label{prf:#1}}{\end{proof}}
+  {}{}%
+}
+{
+  \@nameuse{endcollect}
 }
 
 \NewEnviron{rep-proposition}[1]{%
