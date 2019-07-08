@@ -31,7 +31,7 @@
 \newcommand{\halfRa}[0]{\rightbarharpoon}
 
 % Relations
-\newcommand{\defeq}[0]{\coloneq}
+\newcommand{\defeq}[0]{\coloneqq}
 \newcommand{\slt}[0]{\sqsubseteq}
 
 % Logistics
@@ -93,3 +93,21 @@
 \newcommand{\grad}[0]{\nabla}
 \newcommand{\cact}[1]{\overline{#1}}
 \newcommand{\ul}[1]{\underline{#1}}
+
+% Calculus
+\newcommand{\alter}[0]{~|~}
+\newcommand{\reducesTo}[0]{\leadsto}
+\newcommand{\subst}[3]{{#1}\left[{#3}/{#2}\right]}
+\newcommand{\diffS}[3]{\frac{\partial {#1}}{\partial {#2}}({#2}, {#3})}
+
+% Typings
+\newcommand{\ts}[0]{\vdash}
+\newenvironment{bprooftree}
+  {\leavevmode\hbox\bgroup}
+  {\DisplayProof\egroup}
+  
+\newcommand{\bpt}[1]{
+  \begin{bprooftree}
+    #1
+  \end{bprooftree}
+}
