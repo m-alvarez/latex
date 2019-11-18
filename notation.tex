@@ -71,19 +71,23 @@
 
 \newcommand{\arr}[1]{\mathbf{#1}}
 \newcommand{\A}[1]{\arr{#1}}
-\newcommand{\Id}[1]{\arr{1}_{#1}}
+\newcommand{\Id}[1]{\arr{id}_{#1}}
 \newcommand{\Ev}[0]{\arr{ev}}
+
 
 %% Monoidal
 \newcommand{\tensor}[0]{\otimes}
 
 %% Cartesian
+\newcommand{\terminal}[0]{\mathbf{1}}
 \newcommand{\pair}[2]{\langle {#1}, {#2} \rangle}
 \newcommand{\four}[4]{\pair{\pair{#1}{#2}}{\pair{#3}{#4}}}
 \newcommand{\tuple}[1]{\left\langle {#1} \right\rangle}
 
 %% Coproducts
+\newcommand{\initial}[0]{\mathbf{0}}
 \newcommand{\inl}[0]{\mathbf{Inl}}
+\newcommand{\inj}[0]{\A{i}}
 
 %% Kleisli
 \makeatletter
