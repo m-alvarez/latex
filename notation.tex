@@ -52,9 +52,15 @@
 \renewcommand{\red}[1]{{\color{red} {#1}}}
 \renewcommand{\green}[1]{{\color{green} {#1}}}
 \renewcommand{\blue}[1]{{\color{blue} {#1}}}
+\ifdefined\todo
+\renewcommand{\todo}[1]{
+  \red{[TODO: #1]}
+}
+\else
 \newcommand{\todo}[1]{
   \red{[TODO: #1]}
 }
+\fi
 
 % Theorems
 
